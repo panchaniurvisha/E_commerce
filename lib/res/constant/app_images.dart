@@ -26,4 +26,15 @@ class AppImages {
 
   ///home Screen Two Icons---->
   static const String favoritesButton = "${iconBasePath}inactive_icon.png";
+
+  ///home Screen Three Images---->
+  static const String blackClothes = "${basePath}black_clothes_lady.png";
+  static const String mensHats = "${basePath}men's_hats.png";
+  static const String newCollection = "${basePath}new_collection.png";
+
+  ///Shopping Screen Images------->
+  static const String summerSales1 = "${basePath}summer_sales1.png";
+  static const String summerSales2 = "${basePath}summer_sales2.png";
+  static const String summerSales3 = "${basePath}summer_sales3.png";
+  static const String summerSales4 = "${basePath}summer_sales4.png";
 }

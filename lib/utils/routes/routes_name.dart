@@ -4,5 +4,6 @@ class RoutesName {
   static String forGotPasswordScreen = "/ForGotPasswordScreen";
   static String homeScreen = "/HomeScreen";
   static String homeScreenTwo = "/HomeScreenTwo";
+  static String homeScreenThree = "/HomeScreenThree";
   static String bottomScreen = "/BottomScreen";
 }

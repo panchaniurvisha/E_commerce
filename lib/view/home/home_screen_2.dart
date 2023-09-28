@@ -1,3 +1,5 @@
+import 'package:e_commerce/res/commen/app_elevated_button.dart';
+import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/commen/mediaquery/app_mediaquery.dart';
@@ -22,17 +24,20 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
       "image": AppImages.homeImage3,
       "name": "Dorothy Perkins",
       "typeDress": "Evening Dress",
+      "discount": "-20%",
       "price": "12\$",
     },
     {
       "image": AppImages.sportsClothes,
       "name": "Sitlly",
+      "discount": "-10%",
       "typeDress": "Sport Dress",
       "price": "19\$",
     },
     {
       "image": AppImages.yellowHoodie,
       "name": "yellow dress",
+      "discount": "-30%",
       "typeDress": "fashion Dress",
       "price": "10\$",
     }
@@ -139,6 +144,15 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                   ),
                                 ),
                               ),
+                              SizedBox(
+                                height: height(context) / 30,
+                                width: width(context) / 7,
+                                child: AppElevatedButton(
+                                  text: saleData[index]["discount"],
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 4,
+                                ),
+                              ),
                               Positioned(
                                 top: height(context) / 4.4,
                                 child: Text(
@@ -170,22 +184,26 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       shrinkWrap: true,
                       itemCount: saleData.length),
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "New",
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 34,
                           color: AppColors.iconAndTitleColor),
                     ),
-                    Text(
-                      "view all",
-                      style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.iconAndTitleColor),
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(
+                          context, RoutesName.homeScreenThree),
+                      child: const Text(
+                        "view all",
+                        style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.iconAndTitleColor),
+                      ),
                     )
                   ],
                 ),

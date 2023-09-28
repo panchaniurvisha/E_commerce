@@ -1,4 +1,5 @@
 import 'package:e_commerce/utils/routes/routes_name.dart';
+import 'package:e_commerce/view/home/home_screen_3.dart';
 import 'package:flutter/material.dart';
 
 import '../../view/bottom_bar/bottom_screen.dart';
@@ -14,5 +15,6 @@ Map<String, WidgetBuilder> appRoutes = {
   RoutesName.forGotPasswordScreen: (context) => const ForGotPasswordScreen(),
   RoutesName.homeScreen: (context) => const HomeScreen(),
   RoutesName.homeScreenTwo: (context) => const HomeScreenTwo(),
+  RoutesName.homeScreenThree: (context) => const HomeScreenThree(),
   RoutesName.bottomScreen: (context) => const BottomScreen(),
 };
