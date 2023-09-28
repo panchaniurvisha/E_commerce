@@ -3,6 +3,8 @@ import 'package:e_commerce/view/home/home_screen_3.dart';
 import 'package:flutter/material.dart';
 
 import '../../view/bottom_bar/bottom_screen.dart';
+import '../../view/catalog_1_screen.dart';
+import '../../view/categories_2_screen.dart';
 import '../../view/forgot_password_screen.dart';
 import '../../view/home/home_screen.dart';
 import '../../view/home/home_screen_2.dart';
@@ -17,4 +19,6 @@ Map<String, WidgetBuilder> appRoutes = {
   RoutesName.homeScreenTwo: (context) => const HomeScreenTwo(),
   RoutesName.homeScreenThree: (context) => const HomeScreenThree(),
   RoutesName.bottomScreen: (context) => const BottomScreen(),
+  RoutesName.categoriesTwoScreen: (context) => const CategoriesTwoScreen(),
+  RoutesName.catalogOneScreen: (context) => const CatalogOneScreen(),
 };

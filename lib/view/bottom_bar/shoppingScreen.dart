@@ -1,4 +1,5 @@
 import 'package:e_commerce/res/commen/app_list_title.dart';
+import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/commen/mediaquery/app_mediaquery.dart';
@@ -62,24 +63,29 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
         centerTitle: true);
   }
 
-  List<Widget> listTitle = [
-    const AppListTitle(
-      text: "New",
-      image: AppImages.summerSales1,
-    ),
-    const AppListTitle(
-      text: "Clothes",
-      image: AppImages.summerSales2,
-    ),
-    const AppListTitle(
-      text: "Shoes",
-      image: AppImages.summerSales3,
-    ),
-    const AppListTitle(
-      text: "Accesories",
-      image: AppImages.summerSales4,
-    )
-  ];
+  List<Widget> listTitle(BuildContext context) {
+    return [
+      AppListTitle(
+        text: "New",
+        onTap: () =>
+            Navigator.pushNamed(context, RoutesName.categoriesTwoScreen),
+        image: AppImages.summerSales1,
+      ),
+      const AppListTitle(
+        text: "Clothes",
+        image: AppImages.summerSales2,
+      ),
+      const AppListTitle(
+        text: "Shoes",
+        image: AppImages.summerSales3,
+      ),
+      const AppListTitle(
+        text: "Accesories",
+        image: AppImages.summerSales4,
+      )
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,7 +129,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                           ],
                         ),
                       ),
-                      ...listTitle
+                      ...listTitle(context),
                     ],
                   ),
                 )
@@ -133,22 +139,17 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
               slivers: [
                 showSliverAppBar(),
                 SliverList(
-                  delegate: SliverChildListDelegate([
-                    Container(
-                      height: 600,
-                      color: Colors.blue[200],
-                      child: const Center(
-                        child: Text(
-                          'Settings Tab',
-                          style: TextStyle(fontSize: 40),
-                        ),
+                  delegate: SliverChildListDelegate(
+                    [
+                      const Center(
+                        child: Text("No Data Found",
+                            style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.priceColor)),
                       ),
-                    ),
-                    Container(
-                      height: 1200,
-                      color: Colors.pink,
-                    ),
-                  ]),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -157,20 +158,13 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                 showSliverAppBar(),
                 SliverList(
                   delegate: SliverChildListDelegate([
-                    Container(
-                      height: 600,
-                      color: Colors.blue[200],
-                      child: const Center(
-                        child: Text(
-                          'Settings Tab',
-                          style: TextStyle(fontSize: 40),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 1200,
-                      color: Colors.pink,
-                    ),
+                    const Center(
+                      child: Text("No Data Found",
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.priceColor)),
+                    )
                   ]),
                 ),
               ],

@@ -6,4 +6,6 @@ class RoutesName {
   static String homeScreenTwo = "/HomeScreenTwo";
   static String homeScreenThree = "/HomeScreenThree";
   static String bottomScreen = "/BottomScreen";
+  static String categoriesTwoScreen = "/CategoriesTwoScreen";
+  static String catalogOneScreen = "/CatalogOneScreen";
 }

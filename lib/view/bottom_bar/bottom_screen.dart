@@ -1,6 +1,7 @@
 import 'package:e_commerce/view/bottom_bar/shoppingScreen.dart';
 import 'package:flutter/material.dart';
 
+import '../../res/commen/mediaquery/app_mediaquery.dart';
 import '../../res/constant/app_colors.dart';
 import '../../res/constant/app_images.dart';
 import '../home/home_screen.dart';
@@ -26,7 +27,6 @@ class _BottomScreenState extends State<BottomScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
@@ -45,9 +45,11 @@ class _BottomScreenState extends State<BottomScreen> {
               activeIcon: Icon(Icons.shopping_cart),
             ),
             BottomNavigationBarItem(
-              icon: Image.asset(AppImages.unActiveBag, height: height / 30),
+              icon: Image.asset(AppImages.unActiveBag,
+                  height: height(context) / 30),
               label: 'Bag',
-              activeIcon: Image.asset(AppImages.activeBag, height: height / 30),
+              activeIcon: Image.asset(AppImages.activeBag,
+                  height: height(context) / 30),
             ),
             const BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border_outlined),
@@ -57,17 +59,17 @@ class _BottomScreenState extends State<BottomScreen> {
             BottomNavigationBarItem(
               icon: Image.asset(
                 AppImages.unActiveProfile,
-                height: height / 30,
+                height: height(context) / 30,
               ),
               label: 'Profile',
-              activeIcon:
-                  Image.asset(AppImages.activeProfile, height: height / 30),
+              activeIcon: Image.asset(AppImages.activeProfile,
+                  height: height(context) / 30),
             ),
           ],
-          onTap: (value) {
-            debugPrint("Value---->$value");
+          onTap: (index) {
+            debugPrint("Value---->$index");
             setState(() {
-              currentIndex = value;
+              currentIndex = index;
             });
           },
 
@@ -76,7 +78,7 @@ class _BottomScreenState extends State<BottomScreen> {
 
           showUnselectedLabels: true,
           showSelectedLabels: true,
-          iconSize: height / 30,
+          iconSize: height(context) / 30,
           backgroundColor: AppColors.backGroundColor,
         ),
         body: listOfScreen.elementAt(currentIndex),
