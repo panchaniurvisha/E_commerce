@@ -37,4 +37,17 @@ class AppImages {
   static const String summerSales2 = "${basePath}summer_sales2.png";
   static const String summerSales3 = "${basePath}summer_sales3.png";
   static const String summerSales4 = "${basePath}summer_sales4.png";
+
+  ///Catalog One Screen Images-------->
+  static const String tShirt = "${basePath}t-shirt.png";
+  static const String shirt = "${basePath}shirt.png";
+  static const String pullover = "${basePath}pullover.png";
+  static const String blouse = "${basePath}blouse.png";
+
+  ///Catalog Two Screen Icons-------->
+  static const String viewIcon = "${iconBasePath}view_icon.png";
+
+  ///Catalog Two Screen Images-------->
+  static const String tShirtSpanish = "${basePath}t-shirt_spanish.png";
+  static const String blouseTwo = "${basePath}blouse_two.png";
 }

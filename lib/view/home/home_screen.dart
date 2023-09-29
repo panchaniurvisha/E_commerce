@@ -1,7 +1,7 @@
 import 'package:e_commerce/res/commen/app_elevated_button.dart';
 import 'package:e_commerce/res/commen/mediaquery/app_mediaquery.dart';
 import 'package:e_commerce/res/constant/app_images.dart';
-import 'package:e_commerce/utils/routes/routes_name.dart';
+import 'package:e_commerce/view/home/home_screen_2.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/constant/app_colors.dart';
@@ -48,8 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 bottom: height(context) / 30,
                 left: width(context) / 40,
                 child: AppElevatedButton(
-                  onPressed: () =>
-                      Navigator.pushNamed(context, RoutesName.homeScreenTwo),
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreenTwo(),
+                    ),
+                  ),
+                  //Navigator.pushNamed(context, RoutesName.homeScreenTwo),
                   text: "Check",
                   minimumSize: MaterialStateProperty.all(
                       Size(width(context) / 2.2, height(context) / 20)),

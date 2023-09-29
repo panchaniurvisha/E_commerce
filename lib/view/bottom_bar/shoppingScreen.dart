@@ -1,5 +1,5 @@
 import 'package:e_commerce/res/commen/app_list_title.dart';
-import 'package:e_commerce/utils/routes/routes_name.dart';
+import 'package:e_commerce/view/categories_2_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/commen/mediaquery/app_mediaquery.dart';
@@ -67,8 +67,15 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
     return [
       AppListTitle(
         text: "New",
-        onTap: () =>
-            Navigator.pushNamed(context, RoutesName.categoriesTwoScreen),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CategoriesTwoScreen(),
+          ),
+        ),
+        // onTap: () =>
+        //
+        //      Navigator.pushNamed(context, RoutesName.categoriesTwoScreen),
         image: AppImages.summerSales1,
       ),
       const AppListTitle(

@@ -1,7 +1,7 @@
 import 'package:e_commerce/res/commen/app_category_text.dart';
 import 'package:e_commerce/res/commen/app_elevated_button.dart';
 import 'package:e_commerce/res/commen/mediaquery/app_mediaquery.dart';
-import 'package:e_commerce/utils/routes/routes_name.dart';
+import 'package:e_commerce/view/catalog_1_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../res/constant/app_colors.dart';
@@ -25,8 +25,12 @@ class _CategoriesTwoScreenState extends State<CategoriesTwoScreen> {
     return [
       AppCategoryText(
           text: "Tops",
-          onTap: () =>
-              Navigator.pushNamed(context, RoutesName.catalogOneScreen)),
+          // onTap: () =>
+          //     Navigator.pushNamed(context, RoutesName.catalogOneScreen)
+          onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const CatalogOneScreen()))),
       const AppCategoryText(text: "Shirts & Blouses"),
       const AppCategoryText(text: "Cardigans & Sweaters"),
       const AppCategoryText(text: "Knitwear"),

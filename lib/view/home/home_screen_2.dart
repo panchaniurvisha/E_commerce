@@ -1,10 +1,12 @@
 import 'package:e_commerce/res/commen/app_elevated_button.dart';
-import 'package:e_commerce/utils/routes/routes_name.dart';
+import 'package:e_commerce/res/commen/app_favorite_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../res/commen/app_rating_bar.dart';
 import '../../res/commen/mediaquery/app_mediaquery.dart';
 import '../../res/constant/app_colors.dart';
 import '../../res/constant/app_images.dart';
+import 'home_screen_3.dart';
 
 class HomeScreenTwo extends StatefulWidget {
   const HomeScreenTwo({super.key});
@@ -117,24 +119,13 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                               Positioned(
                                 left: width(context) / 4,
                                 top: height(context) / 7,
-                                child: Container(
-                                  height: height(context) / 10,
-                                  decoration: const BoxDecoration(
-                                      color: AppColors.textFieldFillColor,
-                                      // AppColors.textFieldFillColor,
-                                      shape: BoxShape.circle),
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.all(height(context) / 100),
-                                    child: const Icon(
-                                        Icons.favorite_border_rounded,
-                                        color: AppColors.labelTextColor),
-                                  ),
-                                ),
+                                child: const AppFavoriteButton(),
                               ),
-                              // const AppRatingBar(),
                               Positioned(
-                                top: height(context) / 4.8,
+                                  top: height(context) / 4.8,
+                                  child: const AppRatingBar()),
+                              Positioned(
+                                top: height(context) / 4.2,
                                 child: Text(
                                   saleData[index]["name"],
                                   style: const TextStyle(
@@ -144,17 +135,22 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: height(context) / 30,
-                                width: width(context) / 7,
-                                child: AppElevatedButton(
-                                  text: saleData[index]["discount"],
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 4,
+                              AppElevatedButton(
+                                minimumSize: MaterialStateProperty.all(
+                                  Size(
+                                    width(context) / 90,
+                                    height(context) / 40,
+                                  ),
                                 ),
+                                padding: MaterialStateProperty.all(
+                                  EdgeInsets.all(height(context) / 100),
+                                ),
+                                text: saleData[index]["discount"],
+                                fontWeight: FontWeight.w400,
+                                fontSize: 10,
                               ),
                               Positioned(
-                                top: height(context) / 4.4,
+                                top: height(context) / 3.9,
                                 child: Text(
                                   saleData[index]["typeDress"],
                                   style: const TextStyle(
@@ -165,7 +161,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                 ),
                               ),
                               Positioned(
-                                top: height(context) / 4,
+                                top: height(context) / 3.6,
                                 child: Text(
                                   saleData[index]["price"],
                                   style: const TextStyle(
@@ -195,8 +191,14 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                           color: AppColors.iconAndTitleColor),
                     ),
                     InkWell(
-                      onTap: () => Navigator.pushNamed(
-                          context, RoutesName.homeScreenThree),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreenThree(),
+                        ),
+                      ),
+                      // onTap: () => Navigator.pushNamed(
+                      //     context, RoutesName.homeScreenThree),
                       child: const Text(
                         "view all",
                         style: TextStyle(
