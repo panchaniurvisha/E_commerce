@@ -1,5 +1,6 @@
 import 'package:e_commerce/res/commen/app_button.dart';
 import 'package:e_commerce/res/commen/women_clothes_container.dart';
+import 'package:e_commerce/view/product_card_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../res/commen/mediaquery/app_mediaquery.dart';
@@ -28,25 +29,33 @@ class _CatalogOneScreenState extends State<CatalogOneScreen> {
 
   List<Widget> listOfWomenClothes(BuildContext context) {
     return [
-      const WomenClothesContainer(
+      WomenClothesContainer(
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
         image: AppImages.pullover,
         brandName: "Mango",
         clothesName: "Pullover",
         price: "51\$",
       ),
-      const WomenClothesContainer(
+      WomenClothesContainer(
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
         image: AppImages.blouse,
         brandName: "Dorothy Perkins",
         clothesName: "Blouse",
         price: "34\$",
       ),
-      const WomenClothesContainer(
+      WomenClothesContainer(
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
         image: AppImages.tShirt,
         brandName: "LOST Ink",
         clothesName: "T-shirt",
         price: "34\$",
       ),
-      const WomenClothesContainer(
+      WomenClothesContainer(
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
         image: AppImages.shirt,
         brandName: "Topshop",
         clothesName: "Shirt",

@@ -50,4 +50,8 @@ class AppImages {
   ///Catalog Two Screen Images-------->
   static const String tShirtSpanish = "${basePath}t-shirt_spanish.png";
   static const String blouseTwo = "${basePath}blouse_two.png";
+
+  ///Product Card Screen Images-------->
+  static const String shortDress1 = "${basePath}shortDress_one.png";
+  static const String shortDress2 = "${basePath}shortDress_Two.png";
 }

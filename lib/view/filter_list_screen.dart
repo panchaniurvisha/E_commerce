@@ -121,19 +121,23 @@ class _FilterListScreenState extends State<FilterListScreen> {
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      Transform.scale(
-                        scale: 1.3,
-                        child: Checkbox(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(2),
+                      Theme(
+                        data: ThemeData(
+                            unselectedWidgetColor: AppColors.labelTextColor),
+                        child: Transform.scale(
+                          scale: 1.3,
+                          child: Checkbox(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(2),
+                            ),
+                            value: isChecked,
+                            activeColor: AppColors.elevatedButtonColor,
+                            onChanged: (value) {
+                              setState(() {
+                                isChecked = !isChecked;
+                              });
+                            },
                           ),
-                          value: isChecked,
-                          activeColor: AppColors.elevatedButtonColor,
-                          onChanged: (value) {
-                            setState(() {
-                              isChecked = !isChecked;
-                            });
-                          },
                         ),
                       ),
                     ],
