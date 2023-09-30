@@ -6,55 +6,64 @@ import '../constant/app_colors.dart';
 import 'app_rating_bar.dart';
 
 class AppColum extends StatelessWidget {
+  final int index;
   final String? image;
   final String? clothesName;
   final String? brandName;
   final String? price;
+
   const AppColum(
-      {super.key, this.image, this.clothesName, this.brandName, this.price});
+      {super.key,
+      this.image,
+      this.clothesName,
+      this.brandName,
+      this.price,
+      required this.index});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+    return Stack(
       children: [
-        Stack(
-          alignment: Alignment.bottomRight,
-          children: [
-            ClipRRect(
-              clipBehavior: Clip.antiAlias,
-              borderRadius: BorderRadius.circular(width(context) / 40),
-              child: Image.asset(image!,
-                  height: height(context) / 4.2, fit: BoxFit.cover),
-            ),
-            const AppFavoriteButton(),
-          ],
+        ClipRRect(
+          clipBehavior: Clip.antiAlias,
+          borderRadius: BorderRadius.circular(width(context) / 40),
+          child: Image.asset(image!,
+              height: height(context) / 4.2, fit: BoxFit.cover),
         ),
-        SizedBox(
-          height: height(context) / 60,
+        Positioned(
+          top: height(context) / 5.5,
+          left: width(context) / 2.8,
+          child: const AppFavoriteButton(),
         ),
-        const AppRatingBar(),
-        Text(
-          brandName!,
-          style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w400,
-              color: AppColors.labelTextColor),
-        ),
-        Text(
-          clothesName!,
-          style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              color: AppColors.iconAndTitleColor),
-        ),
-        Text(
-          price!,
-          style: const TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 14,
-              color: AppColors.iconAndTitleColor),
+        Positioned(
+          top: height(context) / 4,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const AppRatingBar(),
+              Text(
+                brandName!,
+                style: const TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.labelTextColor),
+              ),
+              Text(
+                clothesName!,
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.iconAndTitleColor),
+              ),
+              Text(
+                price!,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                    color: AppColors.iconAndTitleColor),
+              ),
+            ],
+          ),
         ),
       ],
     );

@@ -3,8 +3,18 @@ import 'package:flutter/material.dart';
 import '../constant/app_colors.dart';
 import 'mediaquery/app_mediaquery.dart';
 
-class AppFavoriteButton extends StatelessWidget {
-  const AppFavoriteButton({super.key});
+class AppFavoriteButton extends StatefulWidget {
+  const AppFavoriteButton({
+    super.key,
+  });
+
+  @override
+  State<AppFavoriteButton> createState() => _AppFavoriteButtonState();
+}
+
+class _AppFavoriteButtonState extends State<AppFavoriteButton> {
+  bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,8 +33,22 @@ class AppFavoriteButton extends StatelessWidget {
       ),
       child: Padding(
         padding: EdgeInsets.all(height(context) / 70),
-        child: const Icon(Icons.favorite_border_rounded,
-            color: AppColors.labelTextColor, size: 18),
+        child: InkWell(
+          splashColor: Colors.transparent,
+          onTap: () {
+            setState(() {
+              isFavorite != isFavorite;
+            });
+          },
+          child: Icon(
+              isFavorite
+                  ? Icons.favorite_rounded
+                  : Icons.favorite_border_rounded,
+              color: isFavorite
+                  ? AppColors.elevatedButtonColor
+                  : AppColors.labelTextColor,
+              size: 18),
+        ),
       ),
     );
   }

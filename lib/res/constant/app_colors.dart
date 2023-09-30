@@ -10,4 +10,10 @@ class AppColors {
   static const Color suffixIconColor = Color(0xff55D85A);
   static const Color errorColor = Color(0xffFF2424);
   static const Color priceColor = Color(0xffFF3E3E);
+  static const Color skyBlueColor = Color(0xff2CB1B1);
+  static const Color blackColor = Color(0xff020202);
+  static const Color orangeColor = Color(0xffF48117);
+  static const Color grayColor = Color(0xffBEA9A9);
+  static const Color greenColor = Color(0xff91BA4F);
+  static const Color searchColor = Color(0xff8E8E93);
 }

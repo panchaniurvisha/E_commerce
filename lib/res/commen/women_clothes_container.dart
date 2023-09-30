@@ -11,13 +11,14 @@ class WomenClothesContainer extends StatelessWidget {
   final String? clothesName;
   final String? brandName;
   final String? price;
-  const WomenClothesContainer(
-      {super.key,
-      this.onTap,
-      this.image,
-      this.clothesName,
-      this.brandName,
-      this.price});
+  const WomenClothesContainer({
+    super.key,
+    this.onTap,
+    this.image,
+    this.clothesName,
+    this.brandName,
+    this.price,
+  });
 
   @override
   Widget build(BuildContext context) {

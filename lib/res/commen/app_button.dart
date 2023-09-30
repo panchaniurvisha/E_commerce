@@ -19,7 +19,7 @@ class AppButton extends StatelessWidget {
         ),
         child: Text(
           text!,
-          style: TextStyle(
+          style: const TextStyle(
             color: AppColors.textFieldFillColor,
             fontWeight: FontWeight.w500,
             fontSize: 14,
