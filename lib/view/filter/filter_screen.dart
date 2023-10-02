@@ -1,5 +1,5 @@
 import 'package:e_commerce/res/commen/app_elevated_button.dart';
-import 'package:e_commerce/view/filter_list_screen.dart';
+import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/commen/mediaquery/app_mediaquery.dart';
@@ -262,59 +262,74 @@ class _FilterScreenState extends State<FilterScreen> {
                   ],
                 ),
                 IconButton(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FilterListScreen(),
-                    ),
-                  ),
+                  onPressed: () => Navigator.of(context, rootNavigator: true)
+                      .pushNamed(RoutesName.filterListScreen),
                   icon: const Icon(Icons.navigate_next,
                       color: AppColors.iconAndTitleColor, size: 30),
                 )
               ],
             ),
-            GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 4,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 10),
-              itemBuilder: (context, index) => OutlinedButton(
-                onPressed: () {
-                  setState(
-                    () {
-                      chooseValue = index;
-                    },
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      chooseValue == index
-                          ? AppColors.elevatedButtonColor
-                          : AppColors.backGroundColor),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(width(context) / 10),
+            Container(
+              height: height(context) / 8,
+              decoration: const BoxDecoration(
+                color: AppColors.backGroundColor,
+                boxShadow: [
+                  BoxShadow(
+                      color: AppColors.shadowColor,
+                      blurRadius: 16,
+                      offset: Offset(0, -4),
+                      spreadRadius: 0)
+                ],
+              ),
+              child: GridView.builder(
+                padding: EdgeInsets.only(
+                  top: height(context) / 50,
+                  left: width(context) / 40,
+                  right: width(context) / 40,
+                ),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 4,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 10),
+                itemBuilder: (context, index) => OutlinedButton(
+                  onPressed: () {
+                    setState(
+                      () {
+                        chooseValue = index;
+                      },
+                    );
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        chooseValue == index
+                            ? AppColors.elevatedButtonColor
+                            : AppColors.backGroundColor),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(width(context) / 10),
+                      ),
                     ),
-                  ),
-                  side: MaterialStateProperty.all(
-                    BorderSide(
+                    side: MaterialStateProperty.all(
+                      BorderSide(
                         color: chooseValue == index
                             ? AppColors.elevatedButtonColor
                             : AppColors.iconAndTitleColor,
-                        width: 2),
+                      ),
+                    ),
+                  ),
+                  child: Text(
+                    buttonData[index],
+                    style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.iconAndTitleColor),
                   ),
                 ),
-                child: Text(
-                  buttonData[index],
-                  style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.iconAndTitleColor),
-                ),
+                itemCount: buttonData.length,
+                shrinkWrap: true,
               ),
-              itemCount: buttonData.length,
-              shrinkWrap: true,
             ),
           ],
         ),

@@ -16,4 +16,6 @@ class AppColors {
   static const Color grayColor = Color(0xffBEA9A9);
   static const Color greenColor = Color(0xff91BA4F);
   static const Color searchColor = Color(0xff8E8E93);
+  static const Color shadowColor = Color(0xff1A1B20);
+  static const Color shadowColorButton = Color(0x63121212);
 }

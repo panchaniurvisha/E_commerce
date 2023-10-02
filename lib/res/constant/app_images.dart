@@ -54,4 +54,15 @@ class AppImages {
   ///Product Card Screen Images-------->
   static const String shortDress1 = "${basePath}shortDress_one.png";
   static const String shortDress2 = "${basePath}shortDress_Two.png";
+
+  ///Beg Screen Images-------->
+  static const String gentsTShirt = "${basePath}gents_tshirt.png";
+  static const String girlTShirtTwo = "${basePath}girls_t_shirt.png";
+  static const String girlTShirt = "${basePath}pullover.png";
+
+  ///CheckOut Screen Images-------->
+  static const String fedex = "${basePath}fedex.png";
+  static const String dhl = "${basePath}dhl.png";
+  static const String usps = "${basePath}usps.png";
+  static const String mastercard = "${basePath}mastercard.png";
 }

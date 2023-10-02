@@ -48,16 +48,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 bottom: height(context) / 30,
                 left: width(context) / 40,
                 child: AppElevatedButton(
+                  padding: MaterialStateProperty.all(
+                    EdgeInsets.symmetric(vertical: height(context) / 70),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(width(context) / 10),
+                    ),
+                  ),
                   onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeScreenTwo(),
+                      builder: (context) => const HomeScreenTwo(),
                     ),
                   ),
-                  //Navigator.pushNamed(context, RoutesName.homeScreenTwo),
                   text: "Check",
                   minimumSize: MaterialStateProperty.all(
-                      Size(width(context) / 2.2, height(context) / 20)),
+                      Size(width(context) / 2.2, height(context) / 30)),
                 ),
               ),
             ],

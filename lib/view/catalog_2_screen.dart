@@ -1,11 +1,11 @@
 import 'package:e_commerce/res/commen/mediaquery/app_mediaquery.dart';
 import 'package:e_commerce/res/constant/app_colors.dart';
-import 'package:e_commerce/view/filter/filter_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../res/commen/app_button.dart';
 import '../res/commen/app_colum.dart';
 import '../res/constant/app_images.dart';
+import '../utils/routes/routes_name.dart';
 
 class CatalogTwoScreen extends StatefulWidget {
   const CatalogTwoScreen({super.key});
@@ -103,15 +103,14 @@ class _CatalogTwoScreenState extends State<CatalogTwoScreen> {
               Row(
                 children: [
                   InkWell(
-                      child: const Icon(
-                        Icons.filter_list_rounded,
-                        color: AppColors.iconAndTitleColor,
-                        size: 30,
-                      ),
-                      onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const FilterScreen()))),
+                    child: const Icon(
+                      Icons.filter_list_rounded,
+                      color: AppColors.iconAndTitleColor,
+                      size: 30,
+                    ),
+                    onTap: () => Navigator.of(context, rootNavigator: true)
+                        .pushNamed(RoutesName.filterScreen),
+                  ),
                   const Text(
                     "Filter",
                     style: TextStyle(

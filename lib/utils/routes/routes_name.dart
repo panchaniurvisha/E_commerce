@@ -8,4 +8,8 @@ class RoutesName {
   static String bottomScreen = "/BottomScreen";
   static String categoriesTwoScreen = "/CategoriesTwoScreen";
   static String catalogOneScreen = "/CatalogOneScreen";
+  static String productCardScreen = "/ProductCardScreen";
+  static String filterScreen = "/FilterScreen";
+  static String filterListScreen = "/FilterListScreen";
+  static String checkOutScreen = "/CheckOutScreen";
 }

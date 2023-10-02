@@ -1,13 +1,12 @@
 import 'package:e_commerce/res/commen/app_button.dart';
 import 'package:e_commerce/res/commen/women_clothes_container.dart';
-import 'package:e_commerce/view/product_card_screen.dart';
+import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../res/commen/mediaquery/app_mediaquery.dart';
 import '../res/constant/app_colors.dart';
 import '../res/constant/app_images.dart';
 import 'catalog_2_screen.dart';
-import 'filter/filter_screen.dart';
 
 class CatalogOneScreen extends StatefulWidget {
   const CatalogOneScreen({super.key});
@@ -30,32 +29,48 @@ class _CatalogOneScreenState extends State<CatalogOneScreen> {
   List<Widget> listOfWomenClothes(BuildContext context) {
     return [
       WomenClothesContainer(
-        onTap: () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
+        onTap: () {
+          Navigator.of(
+            context,
+            rootNavigator: true,
+          ).pushNamed(RoutesName.productCardScreen);
+        },
         image: AppImages.pullover,
         brandName: "Mango",
         clothesName: "Pullover",
         price: "51\$",
       ),
       WomenClothesContainer(
-        onTap: () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
+        onTap: () {
+          Navigator.of(
+            context,
+            rootNavigator: true,
+          ).pushNamed(RoutesName.productCardScreen);
+        },
         image: AppImages.blouse,
         brandName: "Dorothy Perkins",
         clothesName: "Blouse",
         price: "34\$",
       ),
       WomenClothesContainer(
-        onTap: () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
+        onTap: () {
+          Navigator.of(
+            context,
+            rootNavigator: true,
+          ).pushNamed(RoutesName.productCardScreen);
+        },
         image: AppImages.tShirt,
         brandName: "LOST Ink",
         clothesName: "T-shirt",
         price: "34\$",
       ),
       WomenClothesContainer(
-        onTap: () => Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const ProductCardScreen())),
+        onTap: () {
+          Navigator.of(
+            context,
+            rootNavigator: true,
+          ).pushNamed(RoutesName.productCardScreen);
+        },
         image: AppImages.shirt,
         brandName: "Topshop",
         clothesName: "Shirt",
@@ -120,11 +135,8 @@ class _CatalogOneScreenState extends State<CatalogOneScreen> {
                       color: AppColors.iconAndTitleColor,
                       size: 30,
                     ),
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const FilterScreen()),
-                    ),
+                    onTap: () => Navigator.of(context, rootNavigator: true)
+                        .pushNamed(RoutesName.filterScreen),
                   ),
                   const Text(
                     "Filter",

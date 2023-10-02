@@ -6,8 +6,8 @@ import '../constant/app_colors.dart';
 class AppOutlineButtonWithSuffixIcon extends StatelessWidget {
   final String? text;
   final void Function()? onPressed;
+  final void Function()? onTap;
   final IconData? icon;
-
   final Color? borderColor;
   const AppOutlineButtonWithSuffixIcon({
     super.key,
@@ -15,6 +15,7 @@ class AppOutlineButtonWithSuffixIcon extends StatelessWidget {
     this.icon,
     this.onPressed,
     this.borderColor,
+    this.onTap,
   });
 
   @override
@@ -41,10 +42,13 @@ class AppOutlineButtonWithSuffixIcon extends StatelessWidget {
           SizedBox(
             width: width(context) / 8,
           ),
-          Icon(
-            icon!,
-            color: AppColors.labelTextColor,
-            size: 20,
+          InkWell(
+            onTap: onTap ?? () {},
+            child: Icon(
+              icon!,
+              color: AppColors.labelTextColor,
+              size: 20,
+            ),
           ),
         ],
       ),
