@@ -1,4 +1,4 @@
-import 'package:e_commerce/res/commen/app_row.dart';
+import 'package:e_commerce/res/commen/app_order_details_card.dart';
 import 'package:e_commerce/res/commen/mediaquery/app_mediaquery.dart';
 import 'package:e_commerce/res/constant/app_colors.dart';
 import 'package:e_commerce/res/constant/app_images.dart';
@@ -12,16 +12,64 @@ class OrderDetailsScreen extends StatefulWidget {
 }
 
 class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
-  List<String> image = [
-    AppImages.blackTShirtGirl,
-    AppImages.girlTShirtTwo,
-    AppImages.girlTShirt,
-  ];
   int chooseValue = 0;
   List<String> buttonData = [
     "Reorder",
     "Leave feedback",
   ];
+  List<Widget> outlineButtonList(BuildContext context) {
+    List<String> image = [
+      AppImages.blackTShirtGirl,
+      AppImages.girlTShirtTwo,
+      AppImages.girlTShirt,
+    ];
+    return List.generate(3, (index) {
+      return AppOrderDetailsCard(image: image[index]);
+    });
+  }
+
+  List<Widget> listOfText() {
+    List<String> text = [
+      "Shipping Address:",
+      "\nPayment method:",
+      "Delivery method:",
+      "Discount:",
+      "Total Amount:",
+    ];
+    return List.generate(5, (index) {
+      return Text(
+        text[index],
+        style: TextStyle(
+          height: 3,
+          fontSize: 14,
+          color: AppColors.labelTextColor,
+          fontWeight: FontWeight.w400,
+        ),
+      );
+    });
+  }
+
+  List<Widget> listOfInformationText() {
+    List<String> text = [
+      "3 Newbridge Court ,Chino Hills,\nCA 91709, United States",
+      "**** **** **** 3947",
+      "FedEx, 3 days, 15\$",
+      "10%, Personal promo code",
+      "133\$",
+    ];
+    return List.generate(5, (index) {
+      return Text(
+        text[index],
+        style: TextStyle(
+          height: 3,
+          fontSize: 14,
+          color: AppColors.iconAndTitleColor,
+          fontWeight: FontWeight.w500,
+        ),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +104,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
           centerTitle: true),
       body: Padding(
         padding: EdgeInsets.symmetric(
-            vertical: height(context) / 40, horizontal: width(context) / 30),
+            vertical: height(context) / 50, horizontal: width(context) / 40),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,47 +158,39 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
               const Text(
                 "3 items",
                 style: TextStyle(
+                    height: 2,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: AppColors.iconAndTitleColor),
               ),
-              // ListView.separated(
-              //   itemBuilder: (context, index) =>
-              //       AppOrderDetailsCard(image: image[index]),
-              //   separatorBuilder: (context, index) => SizedBox(
-              //     height: height(context) / 20,
-              //   ),
-              //   itemCount: image.length,
-              //   shrinkWrap: true,
-              //   physics: NeverScrollableScrollPhysics(),
-              // ),
-              const Text(
-                "Order information",
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.iconAndTitleColor),
+              ...outlineButtonList(context),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: height(context) / 40),
+                child: const Text(
+                  "Order information",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.iconAndTitleColor),
+                ),
               ),
-              const AppRow(
-                text: "Shipping Address:",
-                trailingText:
-                    "3 Newbridge Court ,Chino Hills,\nCA 91709, United States",
-              ),
-              const AppRow(
-                text: "Payment method:",
-                trailingText: "**** **** **** 3947",
-              ),
-              const AppRow(
-                text: "Delivery method:",
-                trailingText: "FedEx, 3 days, 15\$",
-              ),
-              const AppRow(
-                text: "Discount:",
-                trailingText: "10%, Personal promo code",
-              ),
-              const AppRow(
-                text: "Total Amount:",
-                trailingText: "133\$",
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ...listOfText(),
+                    ],
+                  ),
+                  Spacer(),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ...listOfInformationText(),
+                    ],
+                  )
+                ],
               ),
               Container(
                 height: height(context) / 8,
