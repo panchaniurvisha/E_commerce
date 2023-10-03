@@ -73,9 +73,6 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             builder: (context) => CategoriesTwoScreen(),
           ),
         ),
-        // onTap: () =>
-        //
-        //      Navigator.pushNamed(context, RoutesName.categoriesTwoScreen),
         image: AppImages.summerSales1,
       ),
       const AppListTitle(

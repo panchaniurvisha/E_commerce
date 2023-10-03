@@ -1,5 +1,10 @@
 import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:e_commerce/view/home/home_screen_3.dart';
+import 'package:e_commerce/view/payments_card_screen.dart';
+import 'package:e_commerce/view/shippingAddress/add_shipping_address_screen.dart';
+import 'package:e_commerce/view/shippingAddress/shipping_address_screen.dart';
+import 'package:e_commerce/view/success/success_screen.dart';
+import 'package:e_commerce/view/success/success_screen_two.dart';
 import 'package:flutter/material.dart';
 
 import '../../view/bottom_bar/bottom_screen.dart';
@@ -29,4 +34,10 @@ Map<String, WidgetBuilder> appRoutes = {
   RoutesName.filterScreen: (context) => const FilterScreen(),
   RoutesName.filterListScreen: (context) => const FilterListScreen(),
   RoutesName.checkOutScreen: (context) => const CheckOutScreen(),
+  RoutesName.paymentCardScreen: (context) => const PaymentCardScreen(),
+  RoutesName.shippingAddressScreen: (context) => const ShippingAddressScreen(),
+  RoutesName.addShippingAddressScreen: (context) =>
+      const AddShippingAddressScreen(),
+  RoutesName.successScreen: (context) => const SuccessScreen(),
+  RoutesName.successScreenTwo: (context) => const SuccessScreenTwo(),
 };

@@ -1,6 +1,7 @@
 import 'package:e_commerce/res/commen/app_elevated_button.dart';
 import 'package:e_commerce/res/commen/mediaquery/app_mediaquery.dart';
 import 'package:e_commerce/res/constant/app_colors.dart';
+import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:flutter/material.dart';
 
 import '../res/constant/app_images.dart';
@@ -57,7 +58,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               ),
               child: Padding(
                 padding: EdgeInsets.all(height(context) / 40),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -81,13 +82,17 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         ),
                       ],
                     ),
-                    Text(
-                      "Change",
-                      style: TextStyle(
-                        color: AppColors.errorColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
+                    InkWell(
+                      child: Text(
+                        "Change",
+                        style: TextStyle(
+                          color: AppColors.errorColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
+                      onTap: () => Navigator.of(context, rootNavigator: true)
+                          .pushNamed(RoutesName.shippingAddressScreen),
                     )
                   ],
                 ),
@@ -95,10 +100,10 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             ),
             Padding(
               padding: EdgeInsets.only(right: width(context) / 20),
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Payment",
                     style: TextStyle(
                       color: AppColors.iconAndTitleColor,
@@ -106,14 +111,19 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       fontSize: 16,
                     ),
                   ),
-                  Text(
-                    "Change",
-                    style: TextStyle(
-                      color: AppColors.errorColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                  InkWell(
+                    splashColor: AppColors.backGroundColor,
+                    child: const Text(
+                      "Change",
+                      style: TextStyle(
+                        color: AppColors.errorColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  )
+                    onTap: () => Navigator.of(context, rootNavigator: true)
+                        .pushNamed(RoutesName.paymentCardScreen),
+                  ),
                 ],
               ),
             ),
@@ -129,7 +139,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         vertical: height(context) / 60,
                         horizontal: width(context) / 20),
                     child: Image.asset(
-                      AppImages.mastercard,
+                      AppImages.mastercardLabel,
                       height: height(context) / 20,
                     ),
                   ),
@@ -224,20 +234,6 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                                 fontSize: 11))
                       ],
                     )),
-                // SizedBox(
-                //   height: height(context) / 5,
-                //   child: Image.asset(
-                //     AppImages.fedex,
-                //   ),
-                // ),
-                // SizedBox(
-                //   height: height(context) / 5,
-                //   child: Image.asset(
-                //     AppImages.fedex,
-                //   ),
-                // ),
-                // Image.asset(AppImages.usps, height: height(context) / 5),
-                // Image.asset(AppImages.dhl, height: height(context) / 5)
               ],
             ),
             const Row(

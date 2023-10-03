@@ -12,4 +12,9 @@ class RoutesName {
   static String filterScreen = "/FilterScreen";
   static String filterListScreen = "/FilterListScreen";
   static String checkOutScreen = "/CheckOutScreen";
+  static String paymentCardScreen = "/PaymentCardScreen";
+  static String shippingAddressScreen = "/ShippingAddressScreen";
+  static String addShippingAddressScreen = "/AddShippingAddressScreen";
+  static String successScreen = "/SuccessScreen";
+  static String successScreenTwo = "/SuccessScreenTwo";
 }

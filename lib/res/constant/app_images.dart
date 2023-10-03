@@ -64,5 +64,24 @@ class AppImages {
   static const String fedex = "${basePath}fedex.png";
   static const String dhl = "${basePath}dhl.png";
   static const String usps = "${basePath}usps.png";
-  static const String mastercard = "${basePath}mastercard.png";
+  static const String mastercardLabel = "${basePath}mastercard.png";
+
+  ///Payment Cards Screen Images--------->
+  static const String masterCard = "${basePath}master_card.png";
+  static const String visaCard = "${basePath}visa_card.png";
+
+  ///Payment Cards Screen Icons--------->
+  static const String helpOutline = "${iconBasePath}help_outline.png";
+
+  ///Success Screen Images------------->
+  static const String successImage = "${basePath}success.png";
+
+  ///Success Screen Two Images------------->
+  static const String bagImage = "${basePath}bags.png";
+
+  ///Profile Screen Images--------->
+  static const String profileImage = "${basePath}profile_image.png";
+
+  ///Order Details Screen Images------>
+  static const String blackTShirtGirl = "${basePath}black_tshirt_girl.png";
 }
