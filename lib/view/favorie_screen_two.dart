@@ -1,20 +1,19 @@
-import 'package:e_commerce/res/commen/app_favorite_clothes_container.dart';
+import 'package:e_commerce/res/commen/app_favorite_clothes_colum.dart';
+import 'package:e_commerce/res/commen/mediaquery/app_mediaquery.dart';
 import 'package:e_commerce/res/constant/app_colors.dart';
-import 'package:e_commerce/res/constant/app_images.dart';
-import 'package:e_commerce/view/favorie_screen_two.dart';
 import 'package:flutter/material.dart';
 
-import '../../res/commen/app_button.dart';
-import '../../res/commen/mediaquery/app_mediaquery.dart';
+import '../res/commen/app_button.dart';
+import '../res/constant/app_images.dart';
 
-class FavoritesScreen extends StatefulWidget {
-  const FavoritesScreen({super.key});
+class FavoriteScreenTwo extends StatefulWidget {
+  const FavoriteScreenTwo({super.key});
 
   @override
-  State<FavoritesScreen> createState() => _FavoritesScreenState();
+  State<FavoriteScreenTwo> createState() => _FavoriteScreenTwoState();
 }
 
-class _FavoritesScreenState extends State<FavoritesScreen> {
+class _FavoriteScreenTwoState extends State<FavoriteScreenTwo> {
   List<Widget> listOfButton(BuildContext context) {
     return [
       const AppButton(
@@ -29,52 +28,40 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     ];
   }
 
-  List<Widget> outlineButtonList(BuildContext context) {
-    List<Map> data = [
-      {
-        "image": AppImages.favoriteOne,
-        "brand": "LIME",
-        "clothesName": "Shirt",
-        "whichColor": " Blue",
-        "whichSize": "L",
-        "price": "32\$",
-      },
-      {
-        "image": AppImages.favoriteTwo,
-        "brand": "Mango",
-        "clothesName": "Longsleeve Violeta",
-        "whichColor": " Orange",
-        "whichSize": "S",
-        "price": "46\$",
-      },
-      {
-        "image": AppImages.favoriteThree,
-        "brand": "&Berries",
-        "clothesName": "T-Shirt",
-        "whichColor": " Black",
-        "whichSize": "S",
-        "price": "39\$",
-      },
-      {
-        "image": AppImages.favoriteThree,
-        "brand": "&Berries",
-        "clothesName": "T-Shirt",
-        "whichColor": " Black",
-        "whichSize": "S",
-        "price": "39\$",
-      },
-    ];
-    return List.generate(4, (index) {
-      return AppFavoriteClothesContainer(
-        image: data[index]["image"],
-        brandName: data[index]["brand"],
-        clothesName: data[index]["clothesName"],
-        chooseColor: data[index]["whichColor"],
-        chooseSize: data[index]["whichSize"],
-        price: data[index]["price"],
-      );
-    });
-  }
+  List<Map> data = [
+    {
+      "image": AppImages.favoriteOne,
+      "price": "10\$",
+      "clothesName": "Shirt",
+      "brandName": "Lime",
+      "whichColor": " Blue",
+      "whichSize": "L",
+    },
+    {
+      "image": AppImages.favoriteTwo,
+      "price": "46\$",
+      "clothesName": "Longsleeve Violeta",
+      "brandName": "Mango",
+      "whichColor": " Orange",
+      "whichSize": "S",
+    },
+    {
+      "image": AppImages.favoriteThree,
+      "price": "39\$",
+      "clothesName": "T-Shirt",
+      "brandName": "&Berries",
+      "whichColor": " Black",
+      "whichSize": "S",
+    },
+    {
+      "image": AppImages.favoriteThree,
+      "price": "39\$",
+      "clothesName": "T-Shirt",
+      "brandName": "&Berries",
+      "whichColor": " Black",
+      "whichSize": "S",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +75,14 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 color: AppColors.iconAndTitleColor,
               ),
               onTap: () => Navigator.pop(context),
+            ),
+          ),
+          title: const Text(
+            "Favorites",
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 18,
+              color: AppColors.iconAndTitleColor,
             ),
           ),
           actions: [
@@ -106,14 +101,6 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Favorites",
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 34,
-                  color: AppColors.iconAndTitleColor,
-                ),
-              ),
               SizedBox(
                 height: height(context) / 20,
                 child: ListView.builder(
@@ -126,12 +113,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               ),
               Row(
                 children: [
-                  const InkWell(
-                    child: Icon(
-                      Icons.filter_list_rounded,
-                      color: AppColors.iconAndTitleColor,
-                      size: 30,
-                    ),
+                  const Icon(
+                    Icons.filter_list_rounded,
+                    color: AppColors.iconAndTitleColor,
+                    size: 30,
                   ),
                   const Text(
                     "Filter",
@@ -155,23 +140,32 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                   ),
                   const Spacer(),
                   InkWell(
-                    child: const Icon(
-                      Icons.view_module_sharp,
-                      color: AppColors.iconAndTitleColor,
-                      size: 30,
+                    child: Image.asset(
+                      AppImages.viewIcon,
+                      height: height(context) / 50,
                     ),
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const FavoriteScreenTwo()),
-                    ),
-                  ),
+                    onTap: () => Navigator.pop(context),
+                  )
                 ],
               ),
-              SizedBox(
-                height: height(context) / 40,
+              GridView.builder(
+                padding: EdgeInsets.only(top: height(context) / 40),
+                scrollDirection: Axis.vertical,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: width(context) / 30,
+                    childAspectRatio: 0.535),
+                shrinkWrap: true,
+                itemCount: data.length,
+                itemBuilder: (context, index) => AppFavoriteClothesColum(
+                    index: index,
+                    price: data[index]["price"],
+                    chooseSize: data[index]["whichSize"],
+                    chooseColor: data[index]["whichColor"],
+                    clothesName: data[index]["clothesName"],
+                    brandName: data[index]["brandName"],
+                    image: data[index]["image"]),
               ),
-              ...outlineButtonList(context),
             ],
           ),
         ),

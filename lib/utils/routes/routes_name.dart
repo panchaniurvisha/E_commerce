@@ -17,4 +17,5 @@ class RoutesName {
   static String addShippingAddressScreen = "/AddShippingAddressScreen";
   static String successScreen = "/SuccessScreen";
   static String successScreenTwo = "/SuccessScreenTwo";
+  static String settingScreen = "/SettingScreen";
 }

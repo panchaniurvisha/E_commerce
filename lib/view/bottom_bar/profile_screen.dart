@@ -1,6 +1,8 @@
 import 'package:e_commerce/res/commen/mediaquery/app_mediaquery.dart';
 import 'package:e_commerce/res/constant/app_colors.dart';
 import 'package:e_commerce/res/constant/app_images.dart';
+import 'package:e_commerce/utils/routes/routes_name.dart';
+import 'package:e_commerce/view/bottom_bar/beg_screen.dart';
 import 'package:e_commerce/view/my_order/my_order_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -142,7 +144,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     builder: (context) => const MyOrderScreen(),
                                   ),
                                 )
-                              : const SizedBox();
+                              : index == 5
+                                  ? Navigator.of(context, rootNavigator: true)
+                                      .pushNamed(RoutesName.settingScreen)
+                                  : index == 1
+                                      ? Navigator.of(context,
+                                              rootNavigator: true)
+                                          .pushNamed(
+                                              RoutesName.shippingAddressScreen)
+                                      : index == 2
+                                          ? Navigator.of(context,
+                                                  rootNavigator: true)
+                                              .pushNamed(
+                                                  RoutesName.paymentCardScreen)
+                                          : index == 4
+                                              ? Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const BegScreen(),
+                                                  ),
+                                                )
+                                              : const SizedBox();
                         },
                       ),
                     ],

@@ -193,7 +193,7 @@ class _PaymentCardScreenState extends State<PaymentCardScreen> {
       height: height(context) / 1.5,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: AppColors.backGroundColor,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(width(context) / 12),
           topLeft: Radius.circular(width(context) / 12),

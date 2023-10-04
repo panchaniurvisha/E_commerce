@@ -84,4 +84,12 @@ class AppImages {
 
   ///Order Details Screen Images------>
   static const String blackTShirtGirl = "${basePath}black_tshirt_girl.png";
+
+  ///Favorite Screen Images------>
+  static const String favoriteOne = "${basePath}favorite_one.png";
+  static const String favoriteTwo = "${basePath}favorite_two.png";
+  static const String favoriteThree = "${basePath}favorite_three.png";
+
+  ///Favorite Screen Icons------>
+  static const String begButton = "${iconBasePath}inactive_button_icon.png";
 }

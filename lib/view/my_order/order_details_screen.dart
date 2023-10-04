@@ -39,7 +39,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
     return List.generate(5, (index) {
       return Text(
         text[index],
-        style: TextStyle(
+        style: const TextStyle(
           height: 3,
           fontSize: 14,
           color: AppColors.labelTextColor,
@@ -60,7 +60,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
     return List.generate(5, (index) {
       return Text(
         text[index],
-        style: TextStyle(
+        style: const TextStyle(
           height: 3,
           fontSize: 14,
           color: AppColors.iconAndTitleColor,
@@ -183,7 +183,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       ...listOfText(),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

@@ -14,7 +14,7 @@ class AppOrderDetailsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: height(context) / 30),
+      margin: EdgeInsets.only(top: height(context) / 60),
       height: height(context) / 8,
       width: double.infinity,
       decoration: BoxDecoration(

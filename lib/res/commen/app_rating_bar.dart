@@ -11,7 +11,7 @@ class AppRatingBar extends StatelessWidget {
     return RatingBar.builder(
       initialRating: 1,
       minRating: 1,
-      itemSize: 20,
+      itemSize: 15,
       direction: Axis.horizontal,
       allowHalfRating: true,
       itemCount: 5,

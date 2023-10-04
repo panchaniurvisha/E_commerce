@@ -1,6 +1,7 @@
 import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:e_commerce/view/home/home_screen_3.dart';
 import 'package:e_commerce/view/payments_card_screen.dart';
+import 'package:e_commerce/view/settings/setting_screen.dart';
 import 'package:e_commerce/view/shippingAddress/add_shipping_address_screen.dart';
 import 'package:e_commerce/view/shippingAddress/shipping_address_screen.dart';
 import 'package:e_commerce/view/success/success_screen.dart';
@@ -40,4 +41,5 @@ Map<String, WidgetBuilder> appRoutes = {
       const AddShippingAddressScreen(),
   RoutesName.successScreen: (context) => const SuccessScreen(),
   RoutesName.successScreenTwo: (context) => const SuccessScreenTwo(),
+  RoutesName.settingScreen: (context) => const SettingScreen(),
 };
