@@ -1,7 +1,7 @@
 import 'package:e_commerce/res/commen/app_favorite_clothes_container.dart';
 import 'package:e_commerce/res/constant/app_colors.dart';
 import 'package:e_commerce/res/constant/app_images.dart';
-import 'package:e_commerce/view/favorie_screen_two.dart';
+import 'package:e_commerce/view/favorite_screen_two.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/commen/app_button.dart';

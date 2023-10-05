@@ -38,7 +38,7 @@ class _FavoriteScreenTwoState extends State<FavoriteScreenTwo> {
       "whichSize": "L",
     },
     {
-      "image": AppImages.favoriteTwo,
+      "image": AppImages.favorite2Two,
       "price": "46\$",
       "clothesName": "Longsleeve Violeta",
       "brandName": "Mango",
@@ -46,7 +46,7 @@ class _FavoriteScreenTwoState extends State<FavoriteScreenTwo> {
       "whichSize": "S",
     },
     {
-      "image": AppImages.favoriteThree,
+      "image": AppImages.favorite3Three,
       "price": "39\$",
       "clothesName": "T-Shirt",
       "brandName": "&Berries",
@@ -54,7 +54,7 @@ class _FavoriteScreenTwoState extends State<FavoriteScreenTwo> {
       "whichSize": "S",
     },
     {
-      "image": AppImages.favoriteThree,
+      "image": AppImages.favorite3Three,
       "price": "39\$",
       "clothesName": "T-Shirt",
       "brandName": "&Berries",
@@ -149,7 +149,8 @@ class _FavoriteScreenTwoState extends State<FavoriteScreenTwo> {
                 ],
               ),
               GridView.builder(
-                padding: EdgeInsets.only(top: height(context) / 40),
+                padding: EdgeInsets.only(
+                    top: height(context) / 40, bottom: height(context) / 40),
                 scrollDirection: Axis.vertical,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,

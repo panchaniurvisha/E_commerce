@@ -18,4 +18,6 @@ class RoutesName {
   static String successScreen = "/SuccessScreen";
   static String successScreenTwo = "/SuccessScreenTwo";
   static String settingScreen = "/SettingScreen";
+  static String visualSearchScreen = "/VisualSearchScreen";
+  static String takingPhotoSearchScreen = "/TakingPhotoSearchScreen";
 }

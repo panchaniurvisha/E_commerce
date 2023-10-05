@@ -1,4 +1,5 @@
 import 'package:e_commerce/res/commen/app_list_title.dart';
+import 'package:e_commerce/utils/routes/routes_name.dart';
 import 'package:e_commerce/view/categories_2_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +58,12 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             padding: EdgeInsets.only(
               right: width(context) / 40,
             ),
-            child: const Icon(Icons.search, color: AppColors.iconAndTitleColor),
+            child: InkWell(
+              child:
+                  const Icon(Icons.search, color: AppColors.iconAndTitleColor),
+              onTap: () => Navigator.of(context, rootNavigator: true)
+                  .pushNamed(RoutesName.visualSearchScreen),
+            ),
           ),
         ],
         centerTitle: true);

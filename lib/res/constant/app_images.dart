@@ -92,4 +92,12 @@ class AppImages {
 
   ///Favorite Screen Icons------>
   static const String begButton = "${iconBasePath}inactive_button_icon.png";
+  static const String favorite2Two = "${basePath}favorite2_second.png";
+  static const String favorite3Three = "${basePath}favorite3_third.png";
+
+  ///VisualSearchScreen  Images------>
+  static const String backGroundImage = "${basePath}background_image.png";
+
+  ///TakingPhotoSearchScreen Images----->
+  static const String searchButton = "${iconBasePath}circle_with_search.png";
 }

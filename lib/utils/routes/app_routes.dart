@@ -20,6 +20,8 @@ import '../../view/home/home_screen_2.dart';
 import '../../view/product_card_screen.dart';
 import '../../view/sign_in/login_screen.dart';
 import '../../view/sign_up/sign_up_screen.dart';
+import '../../view/taking_photo_search_screen.dart';
+import '../../view/visual_search_screen.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
   RoutesName.signUpScreen: (context) => const SignUpScreen(),
@@ -42,4 +44,7 @@ Map<String, WidgetBuilder> appRoutes = {
   RoutesName.successScreen: (context) => const SuccessScreen(),
   RoutesName.successScreenTwo: (context) => const SuccessScreenTwo(),
   RoutesName.settingScreen: (context) => const SettingScreen(),
+  RoutesName.visualSearchScreen: (context) => const VisualSearchScreen(),
+  RoutesName.takingPhotoSearchScreen: (context) =>
+      const TakingPhotoSearchScreen(),
 };
